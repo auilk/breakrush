@@ -8,13 +8,21 @@ This project is currently experimental and may evolve as development continues. 
 
 - JavaScript
 - WebGL
-- HTML5 / CSS3
+- HTML5
+- Tailwind CSS
+- Vite (for development server, bundling, and fast builds)
+
+## Tooling
+
+- Vite for lightning-fast local development and optimized production builds
+- Tailwind CSS for utility-first styling
 
 ## Goals
 
 - Build a smooth browser-based arcade experience
 - Experiment with fast, responsive gameplay mechanics
 - Explore WebGL rendering techniques
+- Maintain a modern and efficient frontend workflow using Vite
 
 ## Future Plans (Possible)
 
@@ -22,6 +30,8 @@ This project is currently experimental and may evolve as development continues. 
 - Port to React Native for mobile (iOS / Android)
 - Add touch controls
 - Expand visual and audio polish
+- Add sound effects and particle systems
+- Implement difficulty scaling
 
 ## Status
 
