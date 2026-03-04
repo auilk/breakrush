@@ -1,38 +1,59 @@
-# breakrush
+# BreakRush
 
-A fast-paced, arcade-style breakout game built for the browser using JavaScript and WebGL.
+A fast-paced, arcade-style breakout game built for the browser using **JavaScript and WebGL**.  
 
-This project is currently experimental and may evolve as development continues. The core focus is creating responsive gameplay, satisfying brick destruction, and smooth performance.
+This project is **experimental** and primarily a learning playground for WebGL, with the secondary goal of exploring **porting WebGL content to React Native** using [`expo-gl`](https://docs.expo.dev/versions/latest/sdk/gl-view/) and the GLView component.  
 
 ## Tech Stack
 
-- JavaScript
-- WebGL
-- HTML5
-- Tailwind CSS
-- Vite (for development server, bundling, and fast builds)
+- **JavaScript** – game logic and interactivity  
+- **WebGL2** – rendering and shaders  
+- **HTML5 & Canvas** – display  
+- **Tailwind CSS** – utility-first styling  
+- **Vite** – fast development server and bundling  
 
-## Tooling
+## Learning Goals
 
-- Vite for lightning-fast local development and optimized production builds
-- Tailwind CSS for utility-first styling
+- Understand **WebGL2 shader compilation and linking**  
+- Practice **vertex & fragment shader basics**  
+- Learn **buffer setup and simple drawing**  
+- Build a responsive **browser-based arcade game**  
+- Explore **porting WebGL to React Native with Expo GLView**
 
-## Goals
+## Features
 
-- Build a smooth browser-based arcade experience
-- Experiment with fast, responsive gameplay mechanics
-- Explore WebGL rendering techniques
-- Maintain a modern and efficient frontend workflow using Vite
+- Fast, responsive gameplay  
+- Basic WebGL2 rendering pipeline  
+- Safe shader compilation & program linking  
+- Designed for eventual mobile porting  
 
-## Future Plans (Possible)
+## Future Plans
 
-- Refactor core logic for portability
-- Port to React Native for mobile (iOS / Android)
-- Add touch controls
-- Expand visual and audio polish
-- Add sound effects and particle systems
-- Implement difficulty scaling
+- Refactor core logic for **portability**  
+- Port to **React Native** (Android)
+- Add **touch controls**  
+- Expand **visuals and audio** (particle systems, SFX)  
+- Implement **difficulty scaling and polish**
 
-## Status
+## Getting Started
 
-Early development — features and structure may change.
+1. Clone the repository:
+
+```bash
+git clone https://github.cgit om/auilk/breakrush.git
+cd breakrush
+```
+
+2. Start the development server:
+
+```bash
+npm install
+npm run dev
+```
+
+3. Open the browser at the provided URL.
+
+
+## Satus
+
+Early development; features and structure may evolve as learning progresses.
