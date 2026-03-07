@@ -89,18 +89,33 @@ const aPositionLocation = gl.getAttribLocation(shaderProgram, "aPosition");
 gl.vertexAttribPointer(aPositionLocation, 2, gl.FLOAT, false, Float32Array.BYTES_PER_ELEMENT * 2, 0);
 gl.enableVertexAttribArray(aPositionLocation);
 
-gl.useProgram(shaderProgram);
-
-gl.clearColor(0.1, 0.1, 0.1, 1.0);
-gl.clear(gl.COLOR_BUFFER_BIT);
-gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
-
 gl.bindVertexArray(null);
-gl.bindBuffer(gl.ARRAY_BUFFER, null);
-gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null);
-gl.useProgram(null);
 
-gl.deleteBuffer(VBO);
-gl.deleteBuffer(EBO);
-gl.deleteVertexArray(VAO);
-gl.deleteProgram(shaderProgram);
+function MainLoop()
+{
+    gl.bindVertexArray(VAO);
+    gl.useProgram(shaderProgram);
+
+    gl.clearColor(0.1, 0.1, 0.1, 1.0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+
+    gl.useProgram(null);
+    gl.bindVertexArray(null);
+
+    requestAnimationFrame(MainLoop);
+}
+requestAnimationFrame(MainLoop);
+
+function ResizeCallback()
+{
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+
+    canvas.width = width;
+    canvas.height = height;
+
+    gl.viewport(0, 0, width, height);
+}
+
+window.addEventListener("resize", ResizeCallback);
