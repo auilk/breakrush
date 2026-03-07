@@ -1,3 +1,6 @@
+import vertSource from "./shaders/vertex.glsl?raw";
+import fragSource from "./shaders/fragment.glsl?raw";
+
 const canvas = document.getElementById("webgl");
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
@@ -5,26 +8,6 @@ canvas.height = canvas.clientHeight;
 /** @type {WebGLRenderingContext} */
 const gl = canvas.getContext("webgl2");
 if (!gl) alert("WebGL is not supported in your browser.");
-
-const vertSource = `#version 300 es
-precision mediump float;
-
-layout(location = 0) in vec2 aPosition;
-
-void main()
-{
-    gl_Position = vec4(aPosition, 0.0, 1.0);
-}`;
-
-const fragSource = `#version 300 es
-precision mediump float;
-
-out vec4 FragColor;
-
-void main()
-{
-    FragColor = vec4(1.0);
-}`;
 
 const vertexShader = gl.createShader(gl.VERTEX_SHADER);
 gl.shaderSource(vertexShader, vertSource);
@@ -117,5 +100,4 @@ function ResizeCallback()
 
     gl.viewport(0, 0, width, height);
 }
-
 window.addEventListener("resize", ResizeCallback);
