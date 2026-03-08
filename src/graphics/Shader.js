@@ -17,17 +17,6 @@ class Shader
         gl.deleteShader(fragmentShader);
     }
 
-    getAttribLocation(gl, name)
-    {
-        const location = gl.getAttribLocation(this.#shaderProgram, name);
-        if (location === -1)
-        {
-            console.warn(`Attribute '${name}' not found or not used`);
-        }
-
-        return location;
-    }
-
     bind(gl)
     {
         gl.useProgram(this.#shaderProgram);
